@@ -185,6 +185,7 @@ class TagDetector
   bool run_quietly_;
   bool publish_tf_;
   tf::TransformBroadcaster tf_pub_;
+  tf::TransformBroadcaster sim_tf_pub_;
 
  public:
 

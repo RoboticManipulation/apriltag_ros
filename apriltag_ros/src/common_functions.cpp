@@ -402,7 +402,13 @@ AprilTagDetectionArray TagDetector::detectTags (
                                                  tag_transform.stamp_,
                                                  image->header.frame_id,
                                                  detection_names[i]));
-    }
+      
+      sim_tf_pub_.sendTransform(tf::StampedTransform(tag_transform,
+                                                tag_transform.stamp_,
+                                                "camera_color_optical_frame_simulation",
+                                                "test_simulation"));
+      
+      }
   }
 
   return tag_detection_array;
